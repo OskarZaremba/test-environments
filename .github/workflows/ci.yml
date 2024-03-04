@@ -15,7 +15,7 @@ jobs:
         run: yarn --immutable
   lint:
     needs: install
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,7 +26,7 @@ jobs:
         run: yarn lint
   unit-test:
     needs: install
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
