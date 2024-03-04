@@ -1,0 +1,5 @@
+.eslintrc.js
+jest.config.js
+next.config.mjs
+postcss.config.js
+prettier.config.js

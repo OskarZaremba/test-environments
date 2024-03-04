@@ -1,0 +1,41 @@
+name: CI
+
+on: [push]
+
+jobs:
+  install:
+    runs-on: warp-ubuntu-latest-x64-2x
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn --immutable
+  lint:
+    needs: install
+    runs-on: warp-ubuntu-latest-x64-2x
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Run Linter
+        run: yarn lint
+  unit-test:
+    needs: install
+    runs-on: warp-ubuntu-latest-x64-2x
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Run unit and integration tests
+        run: yarn test:ci
+      - name: Test coveralls
+        uses: coverallsapp/github-action@3dfc5567390f6fa9267c0ee9c251e4c8c3f18949 # v2.2.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
