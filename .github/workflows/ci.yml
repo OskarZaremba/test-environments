@@ -16,7 +16,7 @@ jobs:
       - name: show the current working dir and list files
         run: |
           pwd
-          ll
+          ls -a
   # lint:
   #   needs: install
   #   runs-on: ubuntu-latest
