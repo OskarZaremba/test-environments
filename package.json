@@ -7,7 +7,7 @@
 		"create-component": "node .component $1",
 		"dev": "next dev",
 		"lint:fix": "yarn run lint:ts --fix",
-		"lint:ts": "./node_modules/eslint/bin/eslint.js src --ext .ts,.tsx",
+		"lint:ts": "eslint src --ext .ts,.tsx",
 		"lint": "yarn run lint:ts",
 		"prepare": "husky",
 		"start": "next start",
