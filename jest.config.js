@@ -1,8 +1,8 @@
-import type { Config } from 'jest';
-import nextJest from 'next/jest.js';
+const nextJest = require('next/jest');
 
+/** @type {import('jest').Config} */
 const createJestConfig = nextJest({ dir: './' });
-const config: Config = {
+const config = {
 	collectCoverageFrom: [
 		'<rootDir>/src/**/*.{js,jsx,ts,tsx}',
 		'!<rootDir>/src/**/*.stories.{js,jsx,ts,tsx}',
@@ -11,9 +11,9 @@ const config: Config = {
 	],
 	coverageDirectory: 'coverage',
 	coverageProvider: 'v8',
-	coverageReporters: ['lcov'],
+	coverageReporters: ['lcovonly'],
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 	testEnvironment: 'jsdom',
 };
 
-export default createJestConfig(config);
+module.exports = createJestConfig(config);
