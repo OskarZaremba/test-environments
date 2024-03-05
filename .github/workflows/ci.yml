@@ -13,12 +13,6 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn --immutable
-      - name: show the current working dir and list files
-        run: |
-          pwd
-          ls -a
-          cd node_modules/eslint/bin
-          ls -a
   lint:
     needs: install
     runs-on: ubuntu-latest
