@@ -17,6 +17,8 @@ jobs:
         run: |
           pwd
           ls -a
+          cd node_modules/eslint/bin
+          ls -a
   # lint:
   #   needs: install
   #   runs-on: ubuntu-latest
