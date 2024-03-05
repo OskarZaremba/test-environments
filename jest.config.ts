@@ -1,8 +1,8 @@
-const nextJest = require('next/jest');
+import type { Config } from 'jest';
+import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({ dir: './' });
-/** @type {import('@jest/types').Config.InitialOptions} */
-const customJestConfig = {
+const config: Config = {
 	collectCoverageFrom: [
 		'<rootDir>/src/**/*.{js,jsx,ts,tsx}',
 		'!<rootDir>/src/**/*.stories.{js,jsx,ts,tsx}',
@@ -16,4 +16,4 @@ const customJestConfig = {
 	testEnvironment: 'jsdom',
 };
 
-module.exports = createJestConfig(customJestConfig);
+export default createJestConfig(config);
