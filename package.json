@@ -11,8 +11,8 @@
 		"lint": "yarn lint:ts",
 		"prepare": "husky",
 		"start": "next start",
-		"test:ci": "jest --coverage --config jest.config.js",
-		"test": "jest --watch --config jest.config.js"
+		"test:ci": "jest --coverage --config jest.config.ts",
+		"test": "jest --watch --config jest.config.ts"
 	},
 	"dependencies": {
 		"next": "14.1.1",
@@ -41,6 +41,7 @@
 		"prettier": "^3.2.5",
 		"prettier-plugin-tailwindcss": "^0.5.11",
 		"tailwindcss": "^3.4.1",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.3.3"
 	},
 	"resolutions": {
