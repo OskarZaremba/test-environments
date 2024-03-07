@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"build": "next build",
-		"create-component": "node .component $1",
+		"create-component": "node .component",
 		"dev": "next dev",
 		"lint:fix": "yarn lint:ts --fix",
 		"lint:ts": "eslint src --ext .ts,.tsx",
@@ -44,8 +44,8 @@
 		"ts-node": "^10.9.2",
 		"typescript": "^5.3.3"
 	},
-	"resolutions": {
-		"string-width": "4.1.0",
-		"wrap-ansi": "7.0.0"
-	}
+	"engines": {
+		"node": "20.x"
+	},
+	"packageManager": "yarn@4.1.1"
 }
